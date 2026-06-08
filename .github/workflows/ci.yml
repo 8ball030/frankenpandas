@@ -63,6 +63,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Install deps ubuntu
+        if: matrix.features == '--all-features' && matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get install -y libhdf5-dev pkg-config
+
+      - name: Install deps macos
+        if: matrix.features == '--all-features' && matrix.os == 'macos-latest'
+        run: |
+          brew install hdf5
+
       - name: Resolve pinned Rust toolchain
         id: rust_toolchain
         shell: bash

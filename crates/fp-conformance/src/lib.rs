@@ -24495,6 +24495,7 @@ mod tests {
 
     use fp_runtime::RuntimeMode;
 
+    #[allow(unused_imports)]
     use super::{
         ArtifactId, AsupersyncCodecEvidence, CaseEvidenceEntry, CaseResult, CaseStatus, CiGate,
         CiGateResult, CiPipelineConfig, CiPipelineResult, ComparisonCategory, DecodeProofArtifact,
